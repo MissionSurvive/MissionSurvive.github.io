@@ -15,7 +15,8 @@ self.addEventListener('install', function (evt) {
  })
  );
 });
-self.addEventListener('fetch', function (evt) {
+
+/*self.addEventListener('fetch', function (evt) {
  // console.log(event.request.url);
  evt.respondWith(
  // Firstly, send request..
@@ -24,7 +25,7 @@ self.addEventListener('fetch', function (evt) {
  return caches.match(evt.request);
  })
  );
-});
+});*/
 
 self.addEventListener('fetch', function (event) {
     event.respondWith(
@@ -38,7 +39,7 @@ self.addEventListener('fetch', function (event) {
     if (!isSuccessful(response)) {
     return response;
     }
-    caches.open(CACHE_NAME)
+    caches.open(filesToCache)
     .then(function (cache) {
     cache.put(event.request, response.clone());
     });
