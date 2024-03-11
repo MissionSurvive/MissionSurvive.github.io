@@ -12,7 +12,7 @@ function isSuccessful(response) {
     response.status === 200 &&
     response.type === 'basic';
    }
-   
+
 self.addEventListener('install', function (evt) {
  evt.waitUntil(
  caches.open(CACHE_NAME).then(function (cache) {
@@ -23,7 +23,7 @@ self.addEventListener('install', function (evt) {
  );
 });
 
-/*self.addEventListener('fetch', function (evt) {
+self.addEventListener('fetch', function (evt) {
  // console.log(event.request.url);
  evt.respondWith(
  // Firstly, send request..
@@ -32,7 +32,7 @@ self.addEventListener('install', function (evt) {
  return caches.match(evt.request);
  })
  );
-});*/
+});
 
 self.addEventListener('fetch', function (event) {
     event.respondWith(
