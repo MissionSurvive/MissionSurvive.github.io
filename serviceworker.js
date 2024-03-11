@@ -6,6 +6,13 @@ let filesToCache = [
  '/images/logo.jpg',
  '/js/main.js'
 ];
+
+function isSuccessful(response) {
+    return response &&
+    response.status === 200 &&
+    response.type === 'basic';
+   }
+   
 self.addEventListener('install', function (evt) {
  evt.waitUntil(
  caches.open(CACHE_NAME).then(function (cache) {
@@ -39,7 +46,7 @@ self.addEventListener('fetch', function (event) {
     if (!isSuccessful(response)) {
     return response;
     }
-    caches.open(filesToCache)
+    caches.open(CACHE_NAME)
     .then(function (cache) {
     cache.put(event.request, response.clone());
     });
