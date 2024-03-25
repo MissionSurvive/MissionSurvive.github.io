@@ -3,17 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="manifest" href="manifest.json" />
     <title>Document</title>
-    
 </head>
 <body>
-    <p>Hello world!</p>
-    <p id="status"></p>
-    <script src="js/main.js"></script>     
+    <div class="columns">
+        <div class="column">
+          <p><button type="button" onclick="getStream('video')">Grab video</button></p>
+          
+          <video controls autoplay style="height:180px; width: 240px;"></video>
+        </div>
+        <div class="column">
+          <p><button type="button" onclick="getStream('audio')">Grab audio</button></p>
+          
+          <audio controls></audio>
+        </div>
+      </div>
 </body>
-<script>
-    alert("Alert");
-</script>
+<script src="script.js"></script>
 </html>
