@@ -1,11 +1,3 @@
-.television {
-    position: relative;
-}
-
-.overlay {
-    position: absolute;
-  bottom: 28%;
-  right: 15%;
-  background-color: black;
-  color: white;
+h1 {
+  color: aqua;
 }
