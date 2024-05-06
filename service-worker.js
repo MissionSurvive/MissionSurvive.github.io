@@ -2,9 +2,9 @@ const CACHE_NAME = 'nazwa';
 // List of files which are store in cache.
 let filesToCache = [
  '/',
- '/style.css',
- '/tv.jpg',
- '/script.js'
+ '/css/style.css',
+ '/images/tv.jpg',
+ '/js/script.js'
 ];
 self.addEventListener('install', function (evt) {
  evt.waitUntil(
